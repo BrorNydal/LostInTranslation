@@ -3,7 +3,8 @@ import { Navigate } from "react-router-dom";
 
 function withAuth(Component){
     return function (props){
-        if(localStorage.getItem("auth") == "true")
+        console.log(localStorage)
+        if(localStorage.getItem("user") != null)
         {
             return(<>
                 <Component {...props} />
