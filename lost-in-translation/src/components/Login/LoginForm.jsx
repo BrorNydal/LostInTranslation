@@ -20,7 +20,12 @@ function LoginForm() {
         console.log(event.target.value);
     }
 
-    return (<>
+    if(localStorage.getItem("user") != null)
+    {
+        navigation("/translate");
+    }
+    
+    return (<>        
         <input type="text" onChange={onUsernameInput} />
         <button onClick={login} styke={{width:"200px", height:"140px"}}> Login </button>
     </>);
