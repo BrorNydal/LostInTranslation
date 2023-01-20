@@ -1,5 +1,6 @@
 // Profile with history
-import withAuth from "../components/Login/WithAuth"
+import TranslateReport from "../components/Profile/ProfileHistory";
+import withAuth from "../components/Login/WithAuth";
 
 function ProfilePage(){
     return(
@@ -10,3 +11,5 @@ function ProfilePage(){
 };
 
 export default withAuth(ProfilePage);
+
+// <!-- <TranslateReport/> -->
