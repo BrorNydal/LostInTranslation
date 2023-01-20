@@ -2,11 +2,10 @@
 
 import LoginForm from "../Components/Login/LoginForm.jsx";
 
-function LoginPage() {
-
-    
+function LoginPage() {    
 
     return (<>
+        <h1>Login</h1>
         <LoginForm />
     </>);
 }

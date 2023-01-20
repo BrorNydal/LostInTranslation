@@ -1,8 +1,9 @@
+import React, {useState} from "react";
 
 // Component for login
 function LoginForm() {
 
-    let [username, setUsername] = setState("");
+    let [username, setUsername] = useState("");
 
     function onUsernameInput(event){
         setUsername(event.target.value);
