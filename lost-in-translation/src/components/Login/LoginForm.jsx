@@ -7,13 +7,10 @@ function LoginForm() {
     let [username, setUsername] = useState("");
     const navigation = useNavigate();
 
-    function login(){
+    function login(){        
+        localStorage.clear();
         localStorage.setItem("user", username);
-        localStorage.setItem("auth", true);
-
         console.log(username + " logged in.");
-
-        console.log(localStorage);
 
         navigation("/translate");
     }
