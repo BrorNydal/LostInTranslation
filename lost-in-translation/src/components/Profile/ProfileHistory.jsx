@@ -1,7 +1,7 @@
 // Component for profile (history)
 import { useContext } from "react";
 import {TranslateContext} from "../Contexts/TranslateContext";
-import oneTranslation from "../Translator/Translation";
+import OneTranslation from "../Translator/Translation";
 
 
 function TranslateReport() { // Report depending on TranslateContext, report in profilehistory
@@ -9,8 +9,8 @@ function TranslateReport() { // Report depending on TranslateContext, report in 
 
     return (
     <>
-      <h1> Translation </h1>
-      <oneTranslation translateData={translateReports.translateList[0]} />
+      <h2> History </h2>
+      <OneTranslation translateData={translateReports.translateList[0]} />
     </>
   );
 }

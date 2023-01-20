@@ -1,19 +1,21 @@
 // Translator component
 import { useContext, useEffect, useState } from "react";
-import oneTranslation from "./Translation";
+import {TranslateContext } from "../Contexts/TranslateContext";
+import OneTranslation from "./Translation";
 
 function TranslateToSign(){ // Parent 
 
-    const [translateTxt,setTranslateTxt] = useState({}); // translateTxt is the object in setTranslateTxt state
-    const [translateReports, setTranslateReports] = useState({translateList:[]}); // Need context to take in translatetext
-    //const [translateReports, setTranslateReports] = useContext(TranslateContext); // Need context to take in translatetext
+    const [translateTxt,setTranslateTxt] = useState(""); // translateTxt is the object in setTranslateTxt state
+    //const [translateReports, setTranslateReports] = useState({translateList:[]}); // Need context to take in translatetext
+    const [translateReports, setTranslateReports] = useContext(TranslateContext); // Need context to take in translatetext
 
     function ToSign(){
         //localStorage.setItem("translate me ", translatetxt);
         // store translation in translateReports
         translateReports.translateList.push(translateTxt);
+        //OneTranslation(translateTxt)
         console.log("translate", translateTxt);
-        console.log("List ", translateReports.translateList[0])
+        console.log("List ", translateReports.translateList)
     }
 
     function onTranslateInput(event){
@@ -31,3 +33,4 @@ function TranslateToSign(){ // Parent
 }
 
 export default TranslateToSign
+// <OneTranslation translationData={translateTxt}/>

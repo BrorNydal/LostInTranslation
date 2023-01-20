@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from "react";
 
-function oneTranslation(props) { // child function
+function OneTranslation(props) { // child function
   return (
       <h4>{props.translateData.translateTxt}</h4> // translateData is an object which has translation added/set/attached to it.
   );
 }
 
-export default oneTranslation;
+export default OneTranslation;
