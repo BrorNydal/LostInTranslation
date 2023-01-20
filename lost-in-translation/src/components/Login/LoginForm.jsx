@@ -1,11 +1,12 @@
 import React, {useState} from "react";
 import { Navigate, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 // Component for login
-function LoginForm() {
+function LoginForm() {    
 
     let [username, setUsername] = useState("");
-    const navigation = useNavigate();
+    const navigation = useNavigate();   
 
     function login(){        
         localStorage.clear();
@@ -18,13 +19,16 @@ function LoginForm() {
     function onUsernameInput(event){
         setUsername(event.target.value);
         console.log(event.target.value);
-    }
+    }    
 
-    if(localStorage.getItem("user") != null)
-    {
-        navigation("/translate");
-    }
+    useEffect(()=>{
+        if(localStorage.getItem("user") != null)
+        {
+            navigation("/translate");
+        }
+    }, []);
     
+
     return (<>        
         <input type="text" onChange={onUsernameInput} />
         <button onClick={login} styke={{width:"200px", height:"140px"}}> Login </button>
