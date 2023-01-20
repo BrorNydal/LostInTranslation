@@ -5,10 +5,11 @@ function withAuth(Component){
     return function (props){
         if(localStorage.getItem("auth") == "true")
         {
-            return(<>
+            return(<>                
                 <Component {...props} />
             </>);
         }
+        console.log(localStorage.getItem("user") + " was not authorized.");
 
         return(<>
             <Navigate to="/"/>

@@ -1,16 +1,21 @@
 import React, {useState} from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 // Component for login
 function LoginForm() {
 
     let [username, setUsername] = useState("");
+    const navigation = useNavigate();
 
     function login(){
         localStorage.setItem("user", username);
         localStorage.setItem("auth", true);
 
-        return <Navigate to="/translate"/>
+        console.log(username + " logged in.");
+
+        console.log(localStorage);
+
+        navigation("/translate");
     }
 
     function onUsernameInput(event){
