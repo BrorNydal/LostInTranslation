@@ -1,11 +1,13 @@
 // Login and front-page
 
-function LoginPage(){
-    return(
-        <div>
-            <h1> this is the login page </h1>
-        </div>
-    )
-};
+import LoginForm from "../Components/Login/LoginForm.jsx";
+
+function LoginPage() {    
+
+    return (<>
+        <h1>Login</h1>
+        <LoginForm />
+    </>);
+}
 
 export default LoginPage;
