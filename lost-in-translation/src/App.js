@@ -5,6 +5,11 @@ import {BrowserRouter,
         Route
       } from 'react-router-dom';
 
+import Login from './view-pages/Login';
+import Translate from './view-pages/Translate';
+import Profile from './view-pages/Profile';
+
+
 function App() {
   return (
     <BrowserRouter>
