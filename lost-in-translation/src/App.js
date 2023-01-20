@@ -5,18 +5,18 @@ import {BrowserRouter,
         Route
       } from 'react-router-dom';
 
-import Login from './view-pages/Login.jsx';
-import Translate from './view-pages/Translate.jsx';
-import Profile from './view-pages/Profile.jsx';
+import LoginPage from './view-pages/Login.jsx';
+import TranslatePage from './view-pages/Translate.jsx';
+import ProfilePage from './view-pages/Profile.jsx';
 
 function App() {
   return (
     <BrowserRouter>
      <div className="App">
       <Routes>
-        <Route> path = "/" element = { <Login/>} </Route> 
-        <Route> path = "/profile" element = { <Profile/>} </Route> 
-        <Route> path = "/translate" element = { <Translate/>} </Route> 
+        <Route> path = "/" element = { <LoginPage/>} </Route> 
+        <Route> path = "/profile" element = { <ProfilePage/>} </Route> 
+        <Route> path = "/translate" element = { <TranslatePage/>} </Route> 
       </Routes>
      </div>
     </BrowserRouter>

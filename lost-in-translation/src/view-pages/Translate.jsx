@@ -5,9 +5,10 @@
 function TranslatePage(){
     return(
         <div>
-            <h1> Translatorpage</h1>
+            <h1> Translatorpage </h1>
         </div>
     )
-}
+};
 
+export default TranslatePage;// with Auth
 // <Translator/>
