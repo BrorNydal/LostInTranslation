@@ -3,7 +3,7 @@
 function LoginPage(){
     return(
         <div>
-            <h1> LoginPage </h1>
+            <h1> this is the login page </h1>
         </div>
     )
 };

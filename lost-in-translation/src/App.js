@@ -1,5 +1,5 @@
 //import logo from './logo.svg';
-import './App.css';
+//import './App.css';
 import {BrowserRouter,
         Routes,
         Route
@@ -14,9 +14,10 @@ function App() {
     <BrowserRouter>
      <div className="App">
       <Routes>
-        <Route> path = "/" element = { <LoginPage/>} </Route> 
-        <Route> path = "/profile" element = { <ProfilePage/>} </Route> 
-        <Route> path = "/translate" element = { <TranslatePage/>} </Route> 
+        <Route path = "/" element = { <LoginPage/>} />
+        <Route path = "/profile" element = { <ProfilePage/>} /> 
+        <Route path = "/translate" element = { <TranslatePage/>} /> 
+
       </Routes>
      </div>
     </BrowserRouter>
