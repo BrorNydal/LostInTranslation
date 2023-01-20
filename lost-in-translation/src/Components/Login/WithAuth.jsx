@@ -3,13 +3,13 @@ import { Navigate } from "react-router-dom";
 
 function withAuth(Component){
     return function (props){
-        console.log(localStorage)
         if(localStorage.getItem("user") != null)
         {
-            return(<>
+            return(<>                
                 <Component {...props} />
             </>);
         }
+        console.log(localStorage.getItem("user") + " was not authorized.");
 
         return(<>
             <Navigate to="/"/>
