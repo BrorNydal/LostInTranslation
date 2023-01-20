@@ -18,7 +18,7 @@ function App() {
         <Route> path = "/" element = { <Login/>} </Route> 
         <Route> path = "/profile" element = { <Profile/>} </Route> 
         <Route> path = "/translate" element = { <Translate/>} </Route> 
-      <Routes/>
+      </Routes>
      </div>
     </BrowserRouter>
   );
