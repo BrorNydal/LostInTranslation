@@ -1,8 +1,9 @@
 //import logo from './logo.svg';
-import './App.css';
+//import './App.css';
 import {BrowserRouter,
         Routes,
-        Route
+        Route,
+        NavLink
       } from 'react-router-dom';
 
 import LoginPage from './view-pages/Login.jsx';
@@ -13,8 +14,15 @@ function App() {
   return (
     <BrowserRouter>
      <div className="App">
+      <NavLink to="/">Login page</NavLink>
+      <NavLink to="/profile"> Profile </NavLink>
+      <NavLink to="/translate"> Translate </NavLink>
+
       <Routes>
-        <Route path="/" element={ <LoginPage/> }/>  
+        <Route path = "/" element = { <LoginPage/>} />
+        <Route path = "/profile" element = { <ProfilePage/>} /> 
+        <Route path = "/translate" element = { <TranslatePage/>} /> 
+
       </Routes>
      </div>
     </BrowserRouter>
