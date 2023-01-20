@@ -9,7 +9,6 @@ function LoginForm() {
     const navigation = useNavigate();   
 
     function login(){        
-        localStorage.clear();
         localStorage.setItem("user", username);
         console.log(username + " logged in.");
 
