@@ -1,5 +1,5 @@
 // Profile with history
-import withAuth from "../components/Login/WithAuth"
+import withAuth from "../Components/Login/WithAuth"
 
 function ProfilePage(){
     return(
