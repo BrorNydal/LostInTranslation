@@ -1,5 +1,6 @@
 // Translator
 // import WithAuth from "";
+import withAuth from "../components/Login/WithAuth"
 import TranslateToSign from "../components/Translator/TranslatorForm"; // Translator component
 
 function TranslatePage(){
@@ -12,5 +13,5 @@ function TranslatePage(){
     )
 };
 
-export default TranslatePage;// with Auth
+export default withAuth(TranslatePage);// with Auth
 // <Translator/>

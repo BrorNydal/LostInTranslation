@@ -1,4 +1,5 @@
 // Profile with history
+import withAuth from "../components/Login/WithAuth"
 
 function ProfilePage(){
     return(
@@ -9,4 +10,4 @@ function ProfilePage(){
     )
 };
 
-export default ProfilePage;
+export default withAuth(ProfilePage);
