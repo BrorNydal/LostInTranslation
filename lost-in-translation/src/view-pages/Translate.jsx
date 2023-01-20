@@ -10,4 +10,5 @@ function TranslatePage(){
     )
 };
 
+export default TranslatePage;// with Auth
 // <Translator/>

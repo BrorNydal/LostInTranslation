@@ -5,9 +5,9 @@ import {BrowserRouter,
         Route
       } from 'react-router-dom';
 
-import LoginPage from './view-pages/Login';
-import TranslatePage from './view-pages/Translate';
-import ProfilePage from './view-pages/Profile';
+import LoginPage from './view-pages/Login.jsx';
+import TranslatePage from './view-pages/Translate.jsx';
+import ProfilePage from './view-pages/Profile.jsx';
 
 function App() {
   return (

@@ -7,3 +7,5 @@ function LoginPage(){
         </div>
     )
 };
+
+export default LoginPage;
