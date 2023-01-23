@@ -7,53 +7,102 @@ function LoginForm() {
 
     let [username, setUsername] = useState("");
     const navigation = useNavigate();   
+    const apiURL = 'https://lostintranslation-lb-api.glitch.me';
+    const apiKey = 'noA+jgBPTEaCgn63IMJlGw==';
 
-    async function login(){        
-        // localStorage.setItem("user", username);
-        // console.log(username + " logged in.");
-
-        const apiURL = 'https://lostintranslation-lb-api.glitch.me';
-
-        // const result = await fetch(`${apiURL}/translations?username=${username}`);
-        // const jsonResult = await result.json();
-        // console.log(jsonResult);
-
-        const apiKey = '';
-
-        fetch(`${apiURL}/translations`, {
-                method: 'POST',
-                headers: {
-                'X-API-Key': apiKey,
-                'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ 
-                    username: 'mega-mind', 
-                    translations: [] 
-                })
+    const createNewUser = async (name) =>
+    {
+        try{
+        const result = await fetch(`
+            ${apiURL}/translations`, 
+            {
+            method: 'POST',
+            headers: {
+            'X-API-Key': apiKey,
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ 
+                username: name, 
+                translations: [] 
             })
-            .then(response => {
-            if (!response.ok) {
-                throw new Error('Could not create new user')
+            });
+
+            if(result.ok)
+            {
+                console.log("user " + username + " created successfully!");
             }
-            return response.json()
-            })
-            .then(newUser => {
-            // newUser is the new user with an id
-            })
-            .catch(error => {
-            })
-
-        // fetch(`${apiURL}/translations?username=${username}`)
-        //     .then(response => response.json())
-        //     .then(results => {
-        //         // results will be an array of users that match the username of victor.
-                
-        //     })
-        //     .catch(error => {
-        //     })
-
-        //navigation("/translate");
+            else
+            {
+                console.log("failed to create user: " + username + "!");
+            }
+        }
+        catch(error)
+        {
+            console.log(error);
+        }
     }
+
+    const userExists = async (name) =>{
+        const result = await fetch(`${apiURL}/translations?username=${name}`);
+        const jsonResult = await result.json();
+
+        if(jsonResult.length == 0)
+        {
+            return {"exists":false, "response": null};
+        }
+        else
+        {   
+            return {"exists":true, "response": jsonResult};         
+        }
+    }
+
+    async function login(){   
+                
+        const response = await userExists(username);        
+
+        if(response.exists)
+        {
+            //User found, proceed to login
+            //TODO: Save username somewhere?     
+            localStorage.SetItem("user")
+        }
+        else
+        {            
+            //No matching user, create new user
+            createNewUser(username);
+        }
+
+        localStorage.setItem()
+    }
+
+    const Delete = () =>{
+        const apiURL = 'https://lostintranslation-lb-api.glitch.me';
+        const apiKey = 'noA+jgBPTEaCgn63IMJlGw==';
+        const userId = parseInt(username);
+
+        fetch(`${apiURL}/translations/${userId}`, {
+            method: 'DELETE', // NB: Set method to PATCH
+            headers: {
+                'X-API-Key': apiKey,
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({})
+        })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Could not update translations history')
+          }
+          return response.json()
+        })
+        .then(updatedUser => {
+          // updatedUser is the user with the Patched data
+          console.log("deleted user " + username);
+        })
+        .catch(error => {
+        })
+    }
+
+    
 
     function onUsernameInput(event){
         setUsername(event.target.value);
@@ -61,7 +110,7 @@ function LoginForm() {
     }    
 
     useEffect(()=>{
-        if(localStorage.getItem("user") != null)
+        if(userExists())
         {
             navigation("/translate");
         }
@@ -70,8 +119,11 @@ function LoginForm() {
 
     return (<>        
         <input type="text" onChange={onUsernameInput} />
-        <button onClick={login} styke={{width:"200px", height:"140px"}}> Login </button>
+        <button onClick={login} style={{width:"80px", height:"20px"}}> Login </button>
+        <button onClick={Delete}  style={{width:"80px", height:"20px"}}> Delete </button>
     </>);
+
+    //
 }
 
 export default LoginForm;
