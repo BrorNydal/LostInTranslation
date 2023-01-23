@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 function OneTranslation(props) { // child function
     const sentence =  props.sentence;
   return (
-      <h4> {sentence}</h4> // translateData is an object which has translation added/set/attached to it.
+      <h5> {sentence}</h5> // translateData is an object which has translation added/set/attached to it.
   );
 }
 
