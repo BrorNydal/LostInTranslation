@@ -10,9 +10,9 @@ function TranslateReport() { // Report depending on TranslateContext, report in 
     return (
     <>
       <h2> History </h2>
-      <OneTranslation translateData={translateReports.translateList[0]} />
+      <OneTranslation sentence = {translateReports.translateList[0]} />
     </>
   );
-}
+};
 
 export default TranslateReport;
