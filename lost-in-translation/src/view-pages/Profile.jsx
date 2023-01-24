@@ -1,13 +1,16 @@
 // Profile with history
-import withAuth from "../Components/Login/WithAuth"
+import TranslateReport from "../components/Profile/ProfileHistory";
+import withAuth from "../components/Login/WithAuth";
 
 function ProfilePage(){
     return(
         <div>
             <h1> ProfilePage </h1>
-            <p> User : <span>{localStorage.getItem("user")}</span></p>
+            <TranslateReport/>
         </div>
     )
 };
 
 export default withAuth(ProfilePage);
+
+// <!--  -->
