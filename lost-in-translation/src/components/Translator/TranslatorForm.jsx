@@ -2,6 +2,8 @@
 import { useContext, useEffect, useState } from "react";
 import {TranslateContext } from "../Contexts/TranslateContext";
 import OneTranslation from "./Translation";
+import TextToSprite from "../ReadSprite/Sprites";
+import '../../index.css' ;
 
 function TranslateToSign(){ // Parent 
 
@@ -18,9 +20,8 @@ function TranslateToSign(){ // Parent
         //localStorage.setItem("translate me ", translatetxt);
         // store translation in translateReports
         translateReports.translateList.push(translateTxt);
-        //OneTranslation(translateTxt)
-        console.log("translate", translateTxt);
-        console.log("List ", translateReports.translateList)
+        //console.log("translate", translateTxt);
+        //console.log("List ", translateReports.translateList)
     }
 
     function onTranslateInput(event){
@@ -29,13 +30,26 @@ function TranslateToSign(){ // Parent
     }
 
     return (
-        <div>
+    <div>
         <input type="text" onChange={onTranslateInput} />
         <button onClick={ToSign}> Translate Me </button>
     </div>
-
     )
-}
+};
+// <TextToSprite sentence = {translateTxt} />
+//<TextToSprite sentence = {translateTxt} />
 
 export default TranslateToSign
 // <OneTranslation translationData={translateTxt}/>
+
+/*         <br /> <br />
+<section>
+<div className ="box">
+    <link rel="stylesheet" href="">
+    </link>
+    <canvas width="1200px" height="600px">
+    </canvas>
+    <TextToSprite sentence = {translateTxt} />
+</div>
+</section>
+*/ 

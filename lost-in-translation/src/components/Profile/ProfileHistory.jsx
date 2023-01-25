@@ -10,13 +10,15 @@ function HistoryLog(){
   const [translateReports, setTranslateReports] = useContext(TranslateContext);
   const listItems = translateReports.translateList.map((translation, index) => {
     return (
-      <OneTranslation sentence = {translation} />
+      <OneTranslation keyname = {translation + String(index)} sentence = {translation} />
       );
   });
   return (
-    <> {listItems} </>
+    <>
+      {listItems}
+     </>
   );
-  }
+  } // ul
 
 function TranslateReport() { // Report depending on TranslateContext, report in profilehistory
     //const [translateReports, setTranslateReports] = useContext(TranslateContext);
@@ -26,7 +28,7 @@ function TranslateReport() { // Report depending on TranslateContext, report in 
       <h2> History </h2>
       <HistoryLog/>
     </>
-  );
+  ); 
 };
 
 export default TranslateReport;
