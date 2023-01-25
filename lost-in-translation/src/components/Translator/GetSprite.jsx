@@ -6,7 +6,8 @@ function OneSprite(props){ // https://daveceddia.com/react-image-tag/
     console.log("here sprite", letter)
     console.log("individial_signs/" + letter + ".png") */
     return (
-      <img src = {"individial_signs/" + letter + ".png"} alt = "text"/>  
+      <img src = {"individial_signs/" + letter + ".png"} alt = "text" width = "50" 
+      height =  "50"/>  
     );
   }
 
