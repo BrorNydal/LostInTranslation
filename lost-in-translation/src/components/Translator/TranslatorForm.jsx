@@ -12,8 +12,8 @@ function TranslateToSign(){ // Parent
     //function GetSign(){
     //    // Make an index(pixel) mapping for each letter. size 1200 x 600;
     //    const dd = 0 ; 
-    //}
-    
+    //} // Patch 
+
     function ToSign(){
         //localStorage.setItem("translate me ", translatetxt);
         // store translation in translateReports

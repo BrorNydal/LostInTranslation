@@ -3,6 +3,8 @@ import { useContext } from "react";
 import {TranslateContext} from "../Contexts/TranslateContext";
 import OneTranslation from "../Translator/Translation";
 
+// Get
+
 //)
 function HistoryLog(){
   const [translateReports, setTranslateReports] = useContext(TranslateContext);
