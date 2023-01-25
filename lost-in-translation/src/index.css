@@ -11,3 +11,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+canvas {
+  left: 0;
+  right: 0;
+  width: 720px;
+  height: 360px;
+  image-rendering: -moz-crisp-edges; 
+  image-rendering: -webkit-optimize-contrast;
+  /*image-rendering: -webkit-crisp-edges;*/
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.box {
+  display: block;
+  float: middle;
+  width: 60.00%;
+  padding: 50px;
+  border-radius: 25px;
+  border: 1px solid rgba(150, 150, 150, 0.5);
+}

@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 
-export const TranslateContext = createContext({translateList:[]}); // Define context
+export const TranslateContext = createContext({translateList:[]}); // Define context, , username: "", id: 0
 
 function TranslateProvider({ children }) { // define provider
   const [translateReports, setTranslateReports] = useState({translateList:[]}); // Define translateReport object and update function
@@ -8,3 +8,7 @@ function TranslateProvider({ children }) { // define provider
 }
 
 export default TranslateProvider; // export provider, providing context translatereport
+
+
+
+// API ::  Post: New user, patch  - update, get - get data from API
