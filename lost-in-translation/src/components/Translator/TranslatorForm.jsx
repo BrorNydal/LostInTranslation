@@ -33,6 +33,12 @@ function TranslateToSign(){ // Parent
     <div>
         <input type="text" onChange={onTranslateInput} />
         <button onClick={ToSign}> Translate Me </button>
+        <br /> <br />
+        <section>
+            <div className ="box">
+            
+            </div>
+        </section>
     </div>
     )
 };
