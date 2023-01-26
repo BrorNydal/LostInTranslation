@@ -9,6 +9,7 @@ import OneTranslation from "../Translator/Translation";
 function HistoryLog(){
   const [user, setUser] = useContext(UserContext);
   const [listItems, setListItems] = useState(<></>);
+  const historyLength = 10;
 
   useEffect(()=>{
     updateHistory();
@@ -19,7 +20,8 @@ function HistoryLog(){
 
     if(userResult.ok === true)
     {
-      const arr = userResult.response.translations;
+      let arr = userResult.response.translations;
+      arr = arr.slice(arr.length - historyLength, arr.length).reverse();
 
       if(arr.length > 0)
       {
