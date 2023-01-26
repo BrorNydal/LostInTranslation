@@ -103,7 +103,7 @@ export async function updateUser(username, translations){
             const arr = getUserResult.response.translations;
             arr.push(translations);
 
-            const result = fetch(`${apiUrl}/translations/${getUserResult.response.id}`, {
+            const result = await fetch(`${apiUrl}/translations/${getUserResult.response.id}`, {
                 method: 'PATCH',
                 headers: {
                     'X-API-Key': apiKey,
@@ -130,39 +130,36 @@ export async function updateUser(username, translations){
     }
 }
 
-/**
- * Deletes a user form the API.
- * @param  {[string]} username , user to delete [description]
- * @return {[boolean]} if successful or not [description]
- */
-export async function deleteUser(username)
+export async function deleteTranslationHistory(username)
 {
     const apiKey = 'noA+jgBPTEaCgn63IMJlGw==';
 
-    await remove();
+    await update();
 
-    async function remove(){
-        
-        const getUserResult = await getUser(username);
-        
+    async function update(){
+
+        const getUserResult = await getUser(username);                
+
         if(getUserResult.ok)
         {
-            const result = fetch(`${apiUrl}/translations/${getUserResult.response.id}`, {
-                method: 'DELETE',
+            const result = await fetch(`${apiUrl}/translations/${getUserResult.response.id}`, {
+                method: 'PATCH',
                 headers: {
                     'X-API-Key': apiKey,
                 'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({})
+                body: JSON.stringify({
+                    translations: []
+                })
             });
 
             if(result.ok)
             {
-                console.log("User " + username + " deleted successfully!");
+                console.log(username + " successfully deleted history!");
             }
             else
             {
-                console.log("User " + username + " could not be deleted!");
+                console.log(username + " failed to delete history!");
             }
         }
         else
