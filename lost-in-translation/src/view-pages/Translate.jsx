@@ -9,8 +9,8 @@ function TranslatePage(){
 
     return(
         <div>
-            <h1> Translatorpage </h1>
             <Authorizer/>
+            <h1> Translatorpage </h1>
             <TranslateToSign/>
         </div>
     )

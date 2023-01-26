@@ -5,8 +5,8 @@ import Authorizer from "../Components/Login/Authorizer";
 function ProfilePage(){
     return(
         <div>
-            <h1> ProfilePage </h1>
             <Authorizer/>
+            <h1> ProfilePage </h1>            
             <TranslateReport/>
         </div>
     )
