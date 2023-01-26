@@ -2,6 +2,7 @@
 // import WithAuth from "";
 import TranslateToSign from "../Components/Translator/TranslatorForm"; // Translator component
 import Authorizer from "../Components/Login/Authorizer";
+import ProfileNavigator from "../Components/Profile/ProfileNavigator";
 
 function TranslatePage(){
 
@@ -12,9 +13,9 @@ function TranslatePage(){
             <Authorizer/>
             <h1> Translatorpage </h1>
             <TranslateToSign/>
+            <ProfileNavigator/>            
         </div>
     )
 };
 
-export default TranslatePage;// with Auth
-// <Translator/>
+export default TranslatePage;
