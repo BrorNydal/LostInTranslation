@@ -1,7 +1,7 @@
 // Translator
 // import WithAuth from "";
-import withAuth from "../components/Login/WithAuth"
 import TranslateToSign from "../components/Translator/TranslatorForm"; // Translator component
+import Authorizer from "../components/Login/Authorizer";
 
 function TranslatePage(){
     console.log("Entering translatorpage")

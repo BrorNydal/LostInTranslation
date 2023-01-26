@@ -1,6 +1,6 @@
 // Profile with history
 import TranslateReport from "../components/Profile/ProfileHistory";
-import withAuth from "../components/Login/WithAuth";
+import Authorizer from "../components/Login/Authorizer";
 
 function ProfilePage(){
     return(
