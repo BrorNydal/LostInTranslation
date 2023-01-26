@@ -40,14 +40,13 @@ function TranslateToSign(){ // Parent
         const txtArr = translateTxt.split("");
         console.log("txtArr ", txtArr)
         const alphabet = ["a","b","c","d","e","f","g","h","i","j", 
-                    "k","l","m","n","o","p","q",";r","s","t",
+                    "k","l","m","n","o","p","q","r","s","t",
                     "u","v","w","x","y","z"];
         const imageItems = txtArr.map((stringElem) => {
             if (alphabet.indexOf(stringElem) >= 0) { // returns -1 if not present
                 return (
                     <OneSprite letter = {stringElem}/>
-                )
-            } else if (stringElem == " " || stringElem == "-") {
+                )} else if (stringElem == " " || stringElem == "-") {
                 return (
                     <> &nbsp; &nbsp; &nbsp; </>
                     )
