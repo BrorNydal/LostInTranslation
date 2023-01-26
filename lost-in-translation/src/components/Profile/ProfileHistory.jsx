@@ -1,6 +1,7 @@
 // Component for profile (history)
 import { useContext, useEffect, useState } from "react";
-import { getUser } from "../../APIUtils";
+import { useNavigate } from "react-router-dom";
+import { deleteTranslationHistory, getUser } from "../../APIUtils";
 import {TranslateContext} from "../Contexts/TranslateContext";
 import { UserContext } from "../Contexts/UserContext";
 import OneTranslation from "../Translator/Translation";
@@ -10,10 +11,10 @@ function HistoryLog(){
   const [listItems, setListItems] = useState(<></>);
 
   useEffect(()=>{
-    getHistory();
+    updateHistory();
   }, []);
 
-  async function getHistory(){
+  async function updateHistory(){
     const userResult = await getUser(user.username);    
 
     if(userResult.ok === true)
@@ -24,16 +25,12 @@ function HistoryLog(){
       {
         setListItems(arr.map((value, index) =>{          
           return (<p>{value}</p>);
-        }));
-        // arr.map((value, index) =>{
-        //   setListItems(<>
-        //     <li key={index}>value</li>
-        //   </>);
-        // });        
+        }));     
       }
       else
       {
         console.log("No translations on user " + user.username);
+        setListItems(<></>);
       }
     }
     else
@@ -42,11 +39,17 @@ function HistoryLog(){
     }
   }
 
+  async function deleteHistory(){
+    await deleteTranslationHistory(user.username);
+    updateHistory();
+  }
+
   return (
     <>
       <section>
         <h4> History </h4>
         {listItems}
+        <button onClick={deleteHistory}> Delete History </button>
       </section>
      </>
   );
