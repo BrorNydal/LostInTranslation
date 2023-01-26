@@ -1,16 +1,17 @@
 // Profile with history
-import TranslateReport from "../components/Profile/ProfileHistory";
-import Authorizer from "../components/Login/Authorizer";
+import HistoryLog from "../Components/Profile/ProfileHistory";
+import Authorizer from "../Components/Login/Authorizer";
 
 function ProfilePage(){
     return(
         <div>
-            <h1> ProfilePage </h1>
-            <TranslateReport/>
+            <Authorizer/>
+            <h1> ProfilePage </h1>            
+            <HistoryLog/>
         </div>
     )
 };
 
-export default withAuth(ProfilePage);
+export default ProfilePage;
 
 // <!--  -->

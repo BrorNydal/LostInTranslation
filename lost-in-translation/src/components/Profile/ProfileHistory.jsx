@@ -1,46 +1,55 @@
 // Component for profile (history)
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
+import { getUser } from "../../APIUtils";
 import {TranslateContext} from "../Contexts/TranslateContext";
+import { UserContext } from "../Contexts/UserContext";
 import OneTranslation from "../Translator/Translation";
 
-// Get
-
-//)
 function HistoryLog(){
-  const [translateReports, setTranslateReports] = useContext(TranslateContext);
-  const listItems = translateReports.translateList.map((translation, index) => {
-    return (
-      <OneTranslation keyname = {translation + String(index)} sentence = {translation} />
-      );
-  });
+  const [user, setUser] = useContext(UserContext);
+  const [listItems, setListItems] = useState(<></>);
+
+  useEffect(()=>{
+    getHistory();
+  }, []);
+
+  async function getHistory(){
+    const userResult = await getUser(user.username);    
+
+    if(userResult.ok === true)
+    {
+      const arr = userResult.response.translations;
+
+      if(arr.length > 0)
+      {
+        setListItems(arr.map((value, index) =>{          
+          return (<p>{value}</p>);
+        }));
+        // arr.map((value, index) =>{
+        //   setListItems(<>
+        //     <li key={index}>value</li>
+        //   </>);
+        // });        
+      }
+      else
+      {
+        console.log("No translations on user " + user.username);
+      }
+    }
+    else
+    {
+      console.log("Could not retrieve translation history data for user " + user.username);
+    }
+  }
+
   return (
     <>
-      {listItems}
+      <section>
+        <h4> History </h4>
+        {listItems}
+      </section>
      </>
   );
-  } // ul
+  } 
 
-function TranslateReport() { // Report depending on TranslateContext, report in profilehistory
-    //const [translateReports, setTranslateReports] = useContext(TranslateContext);
-
-    return (
-    <>
-      <h2> History </h2>
-      <HistoryLog/>
-    </>
-  ); 
-};
-
-export default TranslateReport;
-
-/* Old func
-function TranslateReport() { // Report depending on TranslateContext, report in profilehistory
-  const [translateReports, setTranslateReports] = useContext(TranslateContext);
-
-  return (
-  <>
-    <h2> History </h2>
-    <OneTranslation sentence = {translateReports.translateList[0]} />
-  </>
-);
-}; */
+export default HistoryLog;

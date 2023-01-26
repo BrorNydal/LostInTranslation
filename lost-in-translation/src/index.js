@@ -3,16 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import TranslateProvider from './components/Contexts/TranslateContext';
-import UserProvider, { UserContext } from './components/Contexts/UserContext';
+import TranslateProvider from './Components/Contexts/TranslateContext';
+import UserProvider, { UserContext } from './Components/Contexts/UserContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+//<React.StrictMode>
 root.render(
-  <React.StrictMode>
-    <TranslateProvider> 
+    <UserProvider>
       <App />
-    </TranslateProvider>
-  </React.StrictMode>
+    </UserProvider>
 );
 
 

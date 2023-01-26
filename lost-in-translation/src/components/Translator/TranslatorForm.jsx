@@ -1,4 +1,8 @@
 // Translator component
+import { useContext, useEffect, useState } from "react";
+import {TranslateContext } from "../Contexts/TranslateContext";
+import OneTranslation from "./Translation";
+import OneSprite from "./GetSprite";
 //import TextToSprite from "../ReadSprite/Sprites";
 import '../../index.css' ;
 import { updateUser } from "../../APIUtils";
@@ -7,8 +11,8 @@ import { UserContext } from "../Contexts/UserContext";
 function TranslateToSign(){ // Parent 
 
     const [translateTxt,setTranslateTxt] = useState(""); // translateTxt is the object in setTranslateTxt state
-    //const [translateReports, setTranslateReports] = useContext({translateList:[]}); // Need context to take in translatetext
-    // const translations = [];
+    //const [translateReports, setTranslateReports] = useState({translateList:[]}); // Need context to take in translatetext
+    const translations = [];
     const [user, setUser] = useContext(UserContext);
 
     //function GetSign(){

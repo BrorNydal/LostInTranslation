@@ -4,14 +4,17 @@ import TranslateToSign from "../components/Translator/TranslatorForm"; // Transl
 import Authorizer from "../components/Login/Authorizer";
 
 function TranslatePage(){
-    console.log("Entering translatorpage")
+
+    console.log("Entering translatorpage");
+
     return(
         <div>
+            <Authorizer/>
             <h1> Translatorpage </h1>
             <TranslateToSign/>
         </div>
     )
 };
 
-export default withAuth(TranslatePage);// with Auth
+export default TranslatePage;// with Auth
 // <Translator/>
