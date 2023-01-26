@@ -96,10 +96,13 @@ export async function updateUser(username, translations){
 
     async function update(){
 
-        const getUserResult = await getUser(username);
-        
+        const getUserResult = await getUser(username);                
+
         if(getUserResult.ok)
         {
+            const arr = getUserResult.response.translations;
+            arr.push(translations);
+
             const result = fetch(`${apiUrl}/translations/${getUserResult.response.id}`, {
                 method: 'PATCH',
                 headers: {
@@ -107,7 +110,7 @@ export async function updateUser(username, translations){
                 'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    translations: translations
+                    translations: arr
                 })
             });
 
