@@ -32,11 +32,7 @@ function LoginForm() {
 
     async function btnLogin(){   
         await login(username);
-    }       
-
-    async function btnDelete(){
-        await deleteUser(username);
-    }
+    }     
 
     function onUsernameInput(event){
         setUsername(event.target.value);
@@ -65,7 +61,6 @@ function LoginForm() {
     return (<>        
         <input type="text" onChange={onUsernameInput} />
         <button onClick={btnLogin} style={{width:"80px", height:"20px"}}> Login </button>
-        <button onClick={btnDelete}  style={{width:"80px", height:"20px"}}> Delete </button>
     </>);
 
     //
