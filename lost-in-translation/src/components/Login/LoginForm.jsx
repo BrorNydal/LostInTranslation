@@ -24,8 +24,9 @@ function LoginForm() {
         else
         {            
             //No matching user, create new user
-            await createNewUser(user);
             localStorage.setItem("user", user);
+            await createNewUser(user);            
+
             navigation("/translate");
         }
     }
