@@ -20,6 +20,7 @@ function TranslateToSign(){ // Parent
     function ToSign(){
         //localStorage.setItem("translate me ", translatetxt);
         // store translation in translateReports
+        //const [isImageActive, setIsImageActive] = useState(false);
         translateReports.translateList.push(translateTxt);
         //console.log("translate", translateTxt);
         //console.log("List ", translateReports.translateList)
@@ -27,6 +28,8 @@ function TranslateToSign(){ // Parent
     }
 
     function MakeSign(){
+        //translateReports.translateList.push(translateTxt);
+        console.log("text ", translateTxt)
         console.log("get translation")
         //if (translateTxt ==! ""){
         const txtArr = translateTxt.split("");
@@ -58,12 +61,13 @@ function TranslateToSign(){ // Parent
         <br /> <br />
         <section>
             <div className ="box">
-            <MakeSign/>
+                <MakeSign/>
             </div>
         </section>
     </div>
     )
 };
+// <MakeSign/>
 
 // <MakeSign/>
 // <TextToSprite sentence = {translateTxt} />
