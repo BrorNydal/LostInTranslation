@@ -12,9 +12,9 @@ function TranslateToSign(){ // Parent
 
     const [translateTxt,setTranslateTxt] = useState(""); // translateTxt is the object in setTranslateTxt state
     //const [translateReports, setTranslateReports] = useState({translateList:[]}); // Need context to take in translatetext
-    const translations = [];
+    //const translations = [];
     const [user, setUser] = useContext(UserContext);
-
+    const [isImageActive, setIsImageActive] = useState(false);
     //function GetSign(){
     //    // Make an index(pixel) mapping for each letter. size 1200 x 600;
     //    const dd = 0 ; 
@@ -23,9 +23,9 @@ function TranslateToSign(){ // Parent
     function ToSign(){
         //localStorage.setItem("translate me ", translatetxt);
         // store translation in translateReports
-        //const [isImageActive, setIsImageActive] = useState(false);
         //translateReports.translateList.push(translateTxt);
-        translations.push(translateTxt);
+        //translations.push(translateTxt);
+        setIsImageActive(true);
         updateUser(user.username, String(translateTxt));
         //console.log("translate", translateTxt);
         //console.log("List ", translateReports.translateList)
@@ -39,13 +39,25 @@ function TranslateToSign(){ // Parent
         //if (translateTxt ==! ""){
         const txtArr = translateTxt.split("");
         console.log("txtArr ", txtArr)
+        const alphabet = ["a","b","c","d","e","f","g","h","i","j", 
+                    "k","l","m","n","o","p","q",";r","s","t",
+                    "u","v","w","x","y","z"];
         const imageItems = txtArr.map((stringElem) => {
-            return (
-            <OneSprite letter = {stringElem}/>
-            );
-        } );
+            if (alphabet.indexOf(stringElem) >= 0) { // returns -1 if not present
+                return (
+                    <OneSprite letter = {stringElem}/>
+                )
+            } else if (stringElem == " " || stringElem == "-") {
+                return (
+                    <> &nbsp; &nbsp; &nbsp; </>
+                    )
+            } else {
+                return  (
+                <> </>
+                )
+            }
+        });
         console.log(imageItems)
-        
         return (
             <>
             {imageItems}
@@ -56,6 +68,7 @@ function TranslateToSign(){ // Parent
 
     function onTranslateInput(event){
         setTranslateTxt(event.target.value);
+        setIsImageActive(false);
         //console.log(event.target.value);
     }
 
@@ -66,7 +79,7 @@ function TranslateToSign(){ // Parent
         <br /> <br />
         <section>
             <div className ="box">
-                <MakeSign/>
+            {isImageActive && <MakeSign/>}
             </div>
         </section>
     </div>

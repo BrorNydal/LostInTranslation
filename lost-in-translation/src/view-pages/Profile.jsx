@@ -1,6 +1,6 @@
 // Profile with history
-import HistoryLog from "../Components/Profile/ProfileHistory";
-import Authorizer from "../Components/Login/Authorizer";
+import HistoryLog from "../components/Profile/ProfileHistory";
+import Authorizer from "../components/Login/Authorizer";
 
 function ProfilePage(){
     return(
