@@ -1,5 +1,5 @@
 // Profile with history
-import TranslateReport from "../Components/Profile/ProfileHistory";
+import HistoryLog from "../Components/Profile/ProfileHistory";
 import Authorizer from "../Components/Login/Authorizer";
 
 function ProfilePage(){
@@ -7,7 +7,7 @@ function ProfilePage(){
         <div>
             <Authorizer/>
             <h1> ProfilePage </h1>            
-            <TranslateReport/>
+            <HistoryLog/>
         </div>
     )
 };
