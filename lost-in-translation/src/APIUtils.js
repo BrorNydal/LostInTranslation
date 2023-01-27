@@ -119,34 +119,25 @@ export async function updateUser(username, translations){
     }    
 }
 
-export async function deleteTranslationHistory(username)
-{
-    const getUserResult = await getUser(username);                
+export async function deleteTranslationHistory(userId)
+{       
+    const result = await fetch(`${apiUrl}/translations/${userId}`, {
+        method: 'PATCH',
+        headers: {
+            'X-API-Key': apiKey,
+        'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            translations: []
+        })
+    });
 
-    if(getUserResult.ok)
+    if(result.ok)
     {
-        const result = await fetch(`${apiUrl}/translations/${getUserResult.response.id}`, {
-            method: 'PATCH',
-            headers: {
-                'X-API-Key': apiKey,
-            'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                translations: []
-            })
-        });
-
-        if(result.ok)
-        {
-            console.log(username + " successfully deleted history!");
-        }
-        else
-        {
-            console.log(username + " failed to delete history!");
-        }
+        console.log("User " + userId + " successfully deleted history!");
     }
     else
     {
-        console.log("User " + username + " does not exist!");
+        console.log("User " + userId + " failed to delete history!");
     }
 }
