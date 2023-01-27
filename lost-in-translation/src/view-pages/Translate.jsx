@@ -1,8 +1,9 @@
 // Translator
 // import WithAuth from "";
-import TranslateToSign from "../components/Translator/TranslatorForm"; // Translator component
-import Authorizer from "../components/Login/Authorizer";
-import ProfileNavigator from "../components/Profile/ProfileNavigator";
+import TranslateToSign from "../Components/Translator/TranslatorForm"; // Translator component
+import Authorizer from "../Components/Login/Authorizer";
+import ProfileNavigator from "../Components/Profile/ProfileNavigator";
+import Logout from "../Components/Logout/Logout";
 
 function TranslatePage(){
 
@@ -15,7 +16,8 @@ function TranslatePage(){
             <h1> Lost in Translation </h1>
             </header>
             <TranslateToSign/>
-            <ProfileNavigator/>            
+            <ProfileNavigator/>   
+            <Logout/>         
         </div>
     )
 };
