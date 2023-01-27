@@ -8,6 +8,10 @@ An app for translating text to sign language.
 ## Project Management
 https://www.figma.com/file/3z0n5zfEAe2u9Mlw9W5BL0/Diagram---Untitled?node-id=0%3A1&t=R0evprNBn3FGprio-1
 
+<b href="https://github.com/BrorNydal/LostInTranslation">
+  <img src="https://github.com/BrorNydal/LostInTranslation/blob/main/lost-in-translation/assets/Figma.png">
+</b>
+
 ## How to use this project
 1. Clone/Download project
 2. Create a file and name it ".env"
