@@ -1,7 +1,5 @@
 // Translator component
 import { useContext, useEffect, useState } from "react";
-import {TranslateContext } from "../Contexts/TranslateContext";
-import OneTranslation from "./Translation";
 import OneSprite from "./GetSprite";
 //import TextToSprite from "../ReadSprite/Sprites";
 import '../../index.css' ;
@@ -20,7 +18,7 @@ function TranslateToSign(){ // Parent
     //    const dd = 0 ; 
     //} // Patch 
 
-    function ToSign(){
+    function toSign(){
         //localStorage.setItem("translate me ", translatetxt);
         // store translation in translateReports
         //translateReports.translateList.push(translateTxt);
@@ -32,21 +30,27 @@ function TranslateToSign(){ // Parent
         // use map to find sprites in assets!
     }
 
-    function MakeSign(){
+    function oneSprite(letter){
+        return (
+            <img src = {"individial_signs/" + letter + ".png"} alt = "letter" width = "50" 
+            height =  "50"/>  
+          );
+    }
+
+    function makeSign(){
         //translateReports.translateList.push(translateTxt);
-        console.log("text ", translateTxt)
-        console.log("get translation")
+        console.log("text ", translateTxt);
         //if (translateTxt ==! ""){
         const txtArr = translateTxt.toLowerCase().split("");
         //console.log(translateTxt);
-        console.log("txtArr ", txtArr)
+        console.log("txtArr ", txtArr);
         const alphabet = ["a","b","c","d","e","f","g","h","i","j", 
                     "k","l","m","n","o","p","q","r","s","t",
                     "u","v","w","x","y","z"];
         const imageItems = txtArr.map((stringElem) => {
             if (alphabet.indexOf(stringElem) >= 0) { // returns -1 if not present
                 return (
-                    <OneSprite letter = {stringElem}/>
+                    oneSprite(stringElem)
                 )} else if (stringElem == " " || stringElem == "-") {
                 return (
                     <> &nbsp; &nbsp; &nbsp; </>
@@ -75,11 +79,11 @@ function TranslateToSign(){ // Parent
     return (
     <div align = "center">
         <input maxLength="50" type="text" onChange={onTranslateInput} />
-        <button onClick={ToSign}> Translate Me </button>
+        <button onClick={toSign}> Translate Me </button>
         <br /> <br />
         <section>
             <div className ="box">
-            {isImageActive && <MakeSign/>}
+            {isImageActive && makeSign()}
             </div>
         </section>
     </div>
