@@ -50,6 +50,11 @@ bower_components
 .sass-cache
 connect.lock
 typings
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env
 
 # Logs
 logs
