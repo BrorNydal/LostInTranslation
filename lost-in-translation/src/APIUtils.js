@@ -141,3 +141,36 @@ export async function deleteTranslationHistory(userId)
         console.log("User " + userId + " failed to delete history!");
     }
 }
+
+/**
+ * Dev only, deletes a user form the API.
+ * @param  {[string]} username , user to delete [description]
+ * @return {[boolean]} if successful or not [description]
+ */
+export async function deleteUser(username)
+{
+    const getUserResult = await getUser(username);
+
+    if(getUserResult.ok)
+    {
+        const result = fetch(`${apiUrl}/translations/${getUserResult.response.id}`, {
+            method: 'DELETE',
+            headers: {
+                'X-API-Key': apiKey,
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({})
+        });
+
+        if(result.ok)
+        {
+            console.log("User " + username + " deleted successfully!");
+            console.log(username + " successfully deleted history!");
+        }
+        else
+        {
+            console.log("User " + username + " could not be deleted!");
+            console.log(username + " failed to delete history!");
+        }
+    }
+}
