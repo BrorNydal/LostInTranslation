@@ -1,9 +1,8 @@
 // Translator
 // import WithAuth from "";
-import TranslateToSign from "../Components/Translator/TranslatorForm"; // Translator component
-import Authorizer from "../Components/Login/Authorizer";
-import ProfileNavigator from "../Components/Profile/ProfileNavigator";
-import Logout from "../Components/Logout/Logout";
+import TranslateToSign from "../components/Translator/TranslatorForm"; // Translator component
+import Authorizer from "../components/Login/Authorizer";
+import ProfileNavigator from "../components/Profile/ProfileNavigator";
 
 function TranslatePage(){
 
@@ -12,14 +11,18 @@ function TranslatePage(){
     return(
         <div>
             <Authorizer/>
-            <header style = {{backgroundColor: "#2B65EC", color:"white", padding:"20px"}}> 
-            <h1> Lost in Translation </h1>
+            <header style = {{fontFamily: "'Courier New', monospace", backgroundColor: "#2B65EC", color:"white", padding:"20px"}}> 
+                <center>
+                    <h1> Handshaper </h1>
+                </center>
             </header>
-            <TranslateToSign/>
-            <ProfileNavigator/>   
-            <Logout/>         
+            <> <br /> </>
+            <center>
+                <TranslateToSign/>
+                <ProfileNavigator/>
+            </center>            
         </div>
     )
 };
 
-export default TranslatePage;
+export default TranslatePage; 
