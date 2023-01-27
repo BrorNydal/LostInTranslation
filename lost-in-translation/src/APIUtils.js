@@ -1,5 +1,6 @@
 
 const apiUrl = 'https://lostintranslation-lb-api.glitch.me';
+const apiKey = process.env.REACT_APP_API_KEY;
 
 /**
  * Gets a user from the API.
@@ -44,43 +45,37 @@ export async function authorize(username)
  */
 export async function createNewUser(username)
 {
-    const apiKey = 'noA+jgBPTEaCgn63IMJlGw==';
-
-    create();
-
-    async function create(){
-        try{
-        const result = await fetch(`
-            ${apiUrl}/translations`, 
-            {
-                method: 'POST',
-                headers: {
-                'X-API-Key': apiKey,
-                'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ 
-                    username: username, 
-                    translations: [] 
-                })
-            });
-
-            if(result.ok)
-            {
-                console.log("user " + username + " created successfully!");
-
-                const jsonResult = await result.json();
-                return {ok:true, id:jsonResult.id};
-            }
-            else
-            {
-                console.log("failed to create user: " + username + "!");
-            }
-        }
-        catch(error)
+    try{
+    const result = await fetch(`
+        ${apiUrl}/translations`, 
         {
-            console.log(error);
+            method: 'POST',
+            headers: {
+            'X-API-Key': apiKey,
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ 
+                username: username, 
+                translations: [] 
+            })
+        });
+
+        if(result.ok)
+        {
+            console.log("user " + username + " created successfully!");
+
+            const jsonResult = await result.json();
+            return {ok:true, id:jsonResult.id};
+        }
+        else
+        {
+            console.log("failed to create user: " + username + "!");
         }
     }
+    catch(error)
+    {
+        console.log(error);
+    }    
 }
 
 /**
@@ -90,81 +85,68 @@ export async function createNewUser(username)
  * @return {[object]} {ok, id}
  */
 export async function updateUser(username, translations){
-    const apiKey = 'noA+jgBPTEaCgn63IMJlGw==';
 
-    await update();
+    const getUserResult = await getUser(username);                
 
-    async function update(){
+    if(getUserResult.ok)
+    {
+        const arr = getUserResult.response.translations;
+        arr.push(translations);
 
-        const getUserResult = await getUser(username);                
+        const result = await fetch(`${apiUrl}/translations/${getUserResult.response.id}`, {
+            method: 'PATCH',
+            headers: {
+                'X-API-Key': apiKey,
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                translations: arr
+            })
+        });
 
-        if(getUserResult.ok)
+        if(result.ok)
         {
-            const arr = getUserResult.response.translations;
-            arr.push(translations);
-
-            const result = await fetch(`${apiUrl}/translations/${getUserResult.response.id}`, {
-                method: 'PATCH',
-                headers: {
-                    'X-API-Key': apiKey,
-                'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    translations: arr
-                })
-            });
-
-            if(result.ok)
-            {
-                console.log(username + " successfullt updated!");
-            }
-            else
-            {
-                console.log(username + " failed to update!");
-            }
+            console.log(username + " successfullt updated!");
         }
         else
         {
-            console.log("User " + username + " does not exist!");
+            console.log(username + " failed to update!");
         }
     }
+    else
+    {
+        console.log("User " + username + " does not exist!");
+    }    
 }
 
 export async function deleteTranslationHistory(username)
 {
-    const apiKey = 'noA+jgBPTEaCgn63IMJlGw==';
+    const getUserResult = await getUser(username);                
 
-    await update();
+    if(getUserResult.ok)
+    {
+        const result = await fetch(`${apiUrl}/translations/${getUserResult.response.id}`, {
+            method: 'PATCH',
+            headers: {
+                'X-API-Key': apiKey,
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                translations: []
+            })
+        });
 
-    async function update(){
-
-        const getUserResult = await getUser(username);                
-
-        if(getUserResult.ok)
+        if(result.ok)
         {
-            const result = await fetch(`${apiUrl}/translations/${getUserResult.response.id}`, {
-                method: 'PATCH',
-                headers: {
-                    'X-API-Key': apiKey,
-                'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    translations: []
-                })
-            });
-
-            if(result.ok)
-            {
-                console.log(username + " successfully deleted history!");
-            }
-            else
-            {
-                console.log(username + " failed to delete history!");
-            }
+            console.log(username + " successfully deleted history!");
         }
         else
         {
-            console.log("User " + username + " does not exist!");
+            console.log(username + " failed to delete history!");
         }
+    }
+    else
+    {
+        console.log("User " + username + " does not exist!");
     }
 }
