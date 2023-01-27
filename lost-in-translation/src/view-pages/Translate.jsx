@@ -3,6 +3,7 @@
 import TranslateToSign from "../components/Translator/TranslatorForm"; // Translator component
 import Authorizer from "../components/Login/Authorizer";
 import ProfileNavigator from "../components/Profile/ProfileNavigator";
+import Logout from "../Components/Logout/Logout";
 
 function TranslatePage(){
 
@@ -20,6 +21,7 @@ function TranslatePage(){
             <center>
                 <TranslateToSign/>
                 <ProfileNavigator/>
+                <Logout/>
             </center>            
         </div>
     )
