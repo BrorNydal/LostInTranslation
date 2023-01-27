@@ -1,7 +1,5 @@
 // Translator component
 import { useContext, useEffect, useState } from "react";
-import OneSprite from "./GetSprite";
-//import TextToSprite from "../ReadSprite/Sprites";
 import '../../index.css' ;
 import { updateUser } from "../../APIUtils";
 import { UserContext } from "../Contexts/UserContext";
