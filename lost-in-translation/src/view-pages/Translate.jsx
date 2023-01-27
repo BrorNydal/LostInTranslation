@@ -11,13 +11,18 @@ function TranslatePage(){
     return(
         <div>
             <Authorizer/>
-            <header style = {{backgroundColor: "#2B65EC", color:"white", padding:"20px"}}> 
-            <h1> Lost in Translation </h1>
+            <header style = {{fontFamily: "'Courier New', monospace", backgroundColor: "#2B65EC", color:"white", padding:"20px"}}> 
+                <center>
+                    <h1> Handshaper </h1>
+                </center>
             </header>
-            <TranslateToSign/>
-            <ProfileNavigator/>            
+            <> <br /> </>
+            <center>
+                <TranslateToSign/>
+                <ProfileNavigator/>
+            </center>            
         </div>
     )
 };
 
-export default TranslatePage;
+export default TranslatePage; 
