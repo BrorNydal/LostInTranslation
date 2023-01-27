@@ -5,14 +5,16 @@ import { UserContext } from "../Contexts/UserContext";
 
 //Logs the translation history and allows the user to delete it.
 function TranslationHistory(){
-  const [user, setUser] = useContext(UserContext);
+  const [user] = useContext(UserContext);
   const [listItems, setListItems] = useState(<></>);
   const historyLength = 10;
 
   useEffect(()=>{
     updateHistory();
-  }, []);
+    console.log("Effect");
+  }, [listItems, user]);  
 
+  //Updates the content of the history display with the API
   async function updateHistory(){
     const userResult = await getUser(user.username);    
 

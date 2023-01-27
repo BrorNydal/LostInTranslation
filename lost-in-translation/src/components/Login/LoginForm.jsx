@@ -1,5 +1,5 @@
 import React, {useContext, useState} from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { UserContext } from "../Contexts/UserContext";
 import { getUser, createNewUser, deleteUser } from "../../APIUtils";
@@ -13,17 +13,6 @@ function LoginForm() {
     const navigation = useNavigate(); 
     
     const maxUserNameLength = 16;
-
-    function ErrorMessage(){
-        if(errorMessage.length <= 0)
-        {
-            return <></>;
-        }
-        else
-        {
-            return <><p style={{color: "red"}}>{errorMessage}</p></>
-        }
-    }
 
     async function login(user)
     {

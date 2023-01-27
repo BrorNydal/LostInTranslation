@@ -1,5 +1,5 @@
 // Translator component
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import '../../index.css' ;
 import { updateUser } from "../../APIUtils";
 import { UserContext } from "../Contexts/UserContext";
@@ -7,14 +7,16 @@ import { UserContext } from "../Contexts/UserContext";
 function TranslatorForm(){
 
     const [translateTxt,setTranslateTxt] = useState(""); // translateTxt is the object in setTranslateTxt state
-    const [user, setUser] = useContext(UserContext);
+    const [user] = useContext(UserContext);
     const [isImageActive, setIsImageActive] = useState(false);
 
-    function toSign(){
+    //When the user clicks translate, update display
+    function btnToSign(){
         setIsImageActive(true);
         updateUser(user.username, String(translateTxt));
     }
 
+    //Displays a single sprite
     function oneSprite(letter){
         return (
             <img src = {"individial_signs/" + letter + ".png"} alt = "letter" width = "50" 
@@ -22,6 +24,7 @@ function TranslatorForm(){
           );
     }
 
+    //After input is recieved, display signs. Hide when typing.
     function makeSign(){
         console.log("text ", translateTxt);
         const txtArr = translateTxt.toLowerCase().split("");
@@ -35,7 +38,7 @@ function TranslatorForm(){
                 return (
                     oneSprite(stringElem)
                 )} 
-                else if (stringElem == " " || stringElem == "-") {
+                else if (stringElem === " " || stringElem === "-") {
                 return (
                 <> &nbsp; &nbsp; &nbsp; </>
                 )
@@ -64,7 +67,7 @@ function TranslatorForm(){
     return (
     <div align = "center">
         <input maxLength="50" type="text" onChange={onTranslateInput} />
-        <button onClick={toSign}> Translate Me </button>
+        <button onClick={btnToSign}> Translate Me </button>
         <br /> <br />
         <section>
             <div className ="box">

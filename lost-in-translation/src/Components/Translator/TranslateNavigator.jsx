@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-
+//Navigates to the translation page
 function TranslateNavigator(){
 
     const navigator = useNavigate();
