@@ -3,3 +3,9 @@ An app for translating text to sign language.
 
 ## Project Management
 https://www.figma.com/file/3z0n5zfEAe2u9Mlw9W5BL0/Diagram---Untitled?node-id=0%3A1&t=R0evprNBn3FGprio-1
+
+## How to use this project
+1. Clone/Download project
+2. Create a file and name it ".env"
+3. Insert the the api key to a variable named REACT_APP_API_KEY
+4. Done!
