@@ -9,7 +9,8 @@ function ProfileNavigator(){
     }
 
     return (<>
-        <button onClick={navigateToProfile}>Profile</button>
+        <> <br /> </>
+        <button onClick={navigateToProfile}> <img src="laughs.png" alt="Profile" width = "40" height = "40" border="0" /> </button>
     </>)
 }
 

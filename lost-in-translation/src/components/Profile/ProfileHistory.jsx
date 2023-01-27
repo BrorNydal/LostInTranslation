@@ -49,8 +49,14 @@ function HistoryLog(){
   return (
     <>
       <section>
-        <h4> History </h4>
+      <header style = {{fontFamily: "'Courier New', monospace", backgroundColor: "#5F9EA0", color:"white", padding:"1px"}}> 
+                <center>
+                    <h1> History </h1>
+                </center>
+            </header> 
+        <center>  
         {listItems}
+        </center>  
         <button onClick={deleteHistory}> Delete History </button>
       </section>
      </>
@@ -58,3 +64,5 @@ function HistoryLog(){
   } 
 
 export default HistoryLog;
+
+//  <h4> History </h4>
