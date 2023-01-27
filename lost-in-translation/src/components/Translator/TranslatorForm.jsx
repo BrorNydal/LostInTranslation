@@ -74,7 +74,7 @@ function TranslateToSign(){ // Parent
 
     return (
     <div align = "center">
-        <input maxlength="50" type="text" onChange={onTranslateInput} />
+        <input maxLength="50" type="text" onChange={onTranslateInput} />
         <button onClick={ToSign}> Translate Me </button>
         <br /> <br />
         <section>

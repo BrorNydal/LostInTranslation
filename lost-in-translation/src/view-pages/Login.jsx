@@ -11,10 +11,10 @@ function LoginPage() {
                     <LoginForm />
                 </center>
         </header>
-        <body align = "center">
+        <div align = "center">
         <img src = {"sign-spritesheet-1200.png"} alt = "sign-letters" width = "600" 
       height =  "300"/>  
-        </body>
+        </div>
     </>);
 }
 
