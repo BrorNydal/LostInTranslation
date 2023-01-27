@@ -12,7 +12,7 @@ function TranslationHistory(){
   useEffect(()=>{
     updateHistory();
     console.log("Effect");
-  }, [listItems, user]);  
+  }, []);  
 
   //Updates the content of the history display with the API
   async function updateHistory(){

@@ -1,6 +1,6 @@
 // Login and front-page
 
-import LoginForm from "../Components/Login/LoginForm.jsx";
+import LoginForm from '../Components/Login/LoginForm'
 
 function LoginPage() {    
 
