@@ -8,11 +8,11 @@ import { getUser, createNewUser, deleteUser } from "../../APIUtils";
 function LoginForm() {    
 
     let [username, setUsername] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
     const [user, setUser] = useContext(UserContext);
     const navigation = useNavigate(); 
     
-    const maxUserNameLength = 33;
-    let errorMessage = "";
+    const maxUserNameLength = 16;
 
     function ErrorMessage(){
         if(errorMessage.length <= 0)
@@ -29,12 +29,17 @@ function LoginForm() {
     {
         if(user.length <= 0)
         {
-            errorMessage = "Username must consist of at least one character!";
+            setErrorMessage("Username must consist of at least one character!");
             return;
         }
         else if(user.length >= maxUserNameLength)
         {
-            errorMessage = `Username must be shorter than ${maxUserNameLength} characters!`;
+            setErrorMessage(`Username must be shorter than ${maxUserNameLength} characters!`);
+            return;
+        }
+        else if(!onlyLettersAndNumbers(user))
+        {
+            setErrorMessage("Username can not contain spaces or symbols. \nUse characters and numbers only!");
             return;
         }
 
@@ -55,6 +60,10 @@ function LoginForm() {
             navigation("/translate");
         }
     }
+
+    function onlyLettersAndNumbers(str) {
+        return /^[A-Za-z0-9]*$/.test(str);
+      }
 
     async function btnLogin(){   
         await login(username);
@@ -90,7 +99,7 @@ function LoginForm() {
 
     return (<>        
         <input type="text" onChange={onUsernameInput} />
-        <ErrorMessage/>
+        <p style={{color:"white"}}> {errorMessage} </p>
         <button onClick={btnLogin} style={{width:"80px", height:"20px"}}> Login </button>     
         
     </>);
