@@ -37,7 +37,8 @@ function TranslateToSign(){ // Parent
         console.log("text ", translateTxt)
         console.log("get translation")
         //if (translateTxt ==! ""){
-        const txtArr = translateTxt.split("");
+        const txtArr = translateTxt.toLowerCase().split("");
+        //console.log(translateTxt);
         console.log("txtArr ", txtArr)
         const alphabet = ["a","b","c","d","e","f","g","h","i","j", 
                     "k","l","m","n","o","p","q","r","s","t",
