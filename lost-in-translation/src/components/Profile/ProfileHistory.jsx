@@ -42,7 +42,7 @@ function HistoryLog(){
   }
 
   async function deleteHistory(){
-    await deleteTranslationHistory(user.username);
+    await deleteTranslationHistory(user.id);
     await updateHistory();
   }
 
