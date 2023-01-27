@@ -3,7 +3,8 @@ import { useContext, useEffect, useState } from "react";
 import { deleteTranslationHistory, getUser } from "../../APIUtils";
 import { UserContext } from "../Contexts/UserContext";
 
-function HistoryLog(){
+//Logs the translation history and allows the user to delete it.
+function TranslationHistory(){
   const [user, setUser] = useContext(UserContext);
   const [listItems, setListItems] = useState(<></>);
   const historyLength = 10;
@@ -60,4 +61,4 @@ function HistoryLog(){
   );
   } 
 
-export default HistoryLog;
+export default TranslationHistory;

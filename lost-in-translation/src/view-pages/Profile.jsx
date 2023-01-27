@@ -1,5 +1,5 @@
 // Profile with history
-import HistoryLog from "../Components/Profile/ProfileHistory";
+import TranslationHistory from "../Components/Profile/TranslationHistory";
 import Authorizer from "../Components/Login/Authorizer";
 import Logout from "../Components/Logout/Logout";
 import TranslateNavigator from "../Components/Translator/TranslateNavigator";
@@ -13,7 +13,7 @@ function ProfilePage(){
                     <h1> Handshaper </h1>
                 </center>
             </header>      
-            <HistoryLog/>  
+            <TranslationHistory/>  
             <TranslateNavigator/>
             <Logout/>          
         </div>
