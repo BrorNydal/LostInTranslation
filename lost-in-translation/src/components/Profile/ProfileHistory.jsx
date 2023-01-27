@@ -1,10 +1,7 @@
 // Component for profile (history)
 import { useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { deleteTranslationHistory, getUser } from "../../APIUtils";
-import {TranslateContext} from "../Contexts/TranslateContext";
 import { UserContext } from "../Contexts/UserContext";
-import OneTranslation from "../Translator/Translation";
 
 function HistoryLog(){
   const [user, setUser] = useContext(UserContext);
@@ -26,7 +23,7 @@ function HistoryLog(){
       if(arr.length > 0)
       {
         setListItems(arr.map((value, index) =>{          
-          return (<p>{value}</p>);
+          return (<p id={index}>{value}</p>);
         }));     
       }
       else
@@ -64,5 +61,3 @@ function HistoryLog(){
   } 
 
 export default HistoryLog;
-
-//  <h4> History </h4>
