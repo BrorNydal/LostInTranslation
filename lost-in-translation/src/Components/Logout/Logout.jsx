@@ -14,6 +14,7 @@ function Logout(){
     }
 
     return (<>
+        <br/>
         <button onClick={logout}> Logout </button>
     </>);
 }

@@ -1,8 +1,8 @@
 // Profile with history
-import HistoryLog from "../components/Profile/ProfileHistory";
-import Authorizer from "../components/Login/Authorizer";
-import Logout from "../components/Logout/Logout";
-import TranslateNavigator from "../components/Translator/TranslateNavigator";
+import HistoryLog from "../Components/Profile/ProfileHistory";
+import Authorizer from "../Components/Login/Authorizer";
+import Logout from "../Components/Logout/Logout";
+import TranslateNavigator from "../Components/Translator/TranslateNavigator";
 
 function ProfilePage(){
     return(
