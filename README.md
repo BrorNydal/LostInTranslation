@@ -16,11 +16,14 @@ The following pages are available, with described GUI options:
 3. Profile History: See the last 10 translations in your profile, clean history and/or logout. 
 
 ## Dependencies
-[![js](https://img.shields.io/badge/-JavaScript-F7DF1E?logo=javascript&logoColor=000)](https://www.javascript.com/ht)
+[![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)](https://www.npmjs.com/)
+[![react](https://camo.githubusercontent.com/4e4a3b5c3e9c00501ec866e2f2466c5a6032f838aca5f2cf3b14450e39e8a2f0/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f72656163742532302d2532333230323332612e7376673f267374796c653d666f722d7468652d6261646765266c6f676f3d7265616374266c6f676f436f6c6f723d253233363144414642)](https://reactjs.org/)
+[![js](https://img.shields.io/badge/-JavaScript-F7DF1E?logo=javascript&logoColor=000)](https://www.javascript.com)
 [![css](https://img.shields.io/badge/-CSS-1572B6?logo=css3&logoColor=000)](https://en.wikipedia.org/wiki/CSS)
 [![html](https://img.shields.io/badge/-HTML-E34F26?logo=html5&logoColor=000)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![vscode](https://img.shields.io/badge/-Visual%20Studio%20Code-007ACC?logo=visualstudiocode&logoColor=000)](https://code.visualstudio.com/)
 [![windows](https://img.shields.io/badge/-Windows-0078D6?logo=windows&logoColor=000)](https://www.microsoft.com/sv-se/windows)
+(Want to use badges see: [markdown-badges](https://github.com/Ileriayo/markdown-badges)) 
 
 ## Project Management
 The first draft and final structure of the app components were made with [figma](https://www.figma.com/file/3z0n5zfEAe2u9Mlw9W5BL0/Diagram---Untitled?node-id=0%3A1&t=R0evprNBn3FGprio-1), and is shown below.
