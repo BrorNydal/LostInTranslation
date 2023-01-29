@@ -3,7 +3,6 @@
 
 ## Abstract
 > Make a React application for translating text to sign language, with login-page, translate-page and a page for profile-history.
-
 > Part of the Noroff fullstack .NET accelerate module.
 
 ## Download and run
@@ -23,6 +22,7 @@ The following pages are available, with described GUI options:
 [![html](https://img.shields.io/badge/-HTML-E34F26?logo=html5&logoColor=000)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![vscode](https://img.shields.io/badge/-Visual%20Studio%20Code-007ACC?logo=visualstudiocode&logoColor=000)](https://code.visualstudio.com/)
 [![windows](https://img.shields.io/badge/-Windows-0078D6?logo=windows&logoColor=000)](https://www.microsoft.com/sv-se/windows)
+
 (Want to use badges see e.g. [https://github.com/Ileriayo/markdown-badges](https://github.com/Ileriayo/markdown-badges) or [https://home.aveek.io/GitHub-Profile-Badges/](https://home.aveek.io/GitHub-Profile-Badges/)).
 
 ## Project Management
@@ -32,8 +32,12 @@ The first draft and final structure of the app components were made with [figma]
   <img width = "800" height = "600" src="https://github.com/BrorNydal/LostInTranslation/blob/main/lost-in-translation/assets/Figma.png">
 </b>
 
-## Code: Link and description
-
+## Code: Link and description of folders
+- [public](https://github.com/BrorNydal/LostInTranslation/tree/main/lost-in-translation/public): Folder containing public assets, including sprites for sign language icons and profile symbol.
+- [src](https://github.com/BrorNydal/LostInTranslation/tree/main/lost-in-translation/src): Source folder for the application
+  -  [Components](https://github.com/lasse-steinnes/LostInTranslation/tree/main/lost-in-translation/src/Components): Folder with React components in .jsx.
+  -  [view-pages](https://github.com/BrorNydal/LostInTranslation/tree/main/lost-in-translation/src/view-pages): Folder with pages, piecing the app components together into a web-page. 
+  
 ## Contributors
 - [Lasse Steinnes](https://github.com/lasse-steinnes)
 - [Bror Nydal](https://github.com/BrorNydal) 
