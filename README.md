@@ -26,7 +26,7 @@ The following pages are available, with described GUI options:
 The first draft and final structure of the app components were made with [figma](https://www.figma.com/file/3z0n5zfEAe2u9Mlw9W5BL0/Diagram---Untitled?node-id=0%3A1&t=R0evprNBn3FGprio-1), and is shown below.
 
 <b href="https://github.com/BrorNydal/LostInTranslation">
-  <img width = "150px" height = "150px" src="https://github.com/BrorNydal/LostInTranslation/blob/main/lost-in-translation/assets/Figma.png">
+  <img width = "15cm" height = "15cm" src="https://github.com/BrorNydal/LostInTranslation/blob/main/lost-in-translation/assets/Figma.png">
 </b>
 
 ## Code: Link and description
