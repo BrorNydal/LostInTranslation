@@ -6,13 +6,6 @@
 
 > Part of the Noroff fullstack .NET accelerate module.
 
-## Project Management
-The first draft and final structure of the app components were made with [figma](https://www.figma.com/file/3z0n5zfEAe2u9Mlw9W5BL0/Diagram---Untitled?node-id=0%3A1&t=R0evprNBn3FGprio-1), and is shown below.
-
-<b href="https://github.com/BrorNydal/LostInTranslation">
-  <img src="https://github.com/BrorNydal/LostInTranslation/blob/main/lost-in-translation/assets/Figma.png">
-</b>
-
 ## Download and run
 You can download the code with ```bash== git clone (this url) ```. If you want to run the app in a browser, just click the following link: [https://lost-in-translation-pi.vercel.app/](https://lost-in-translation-pi.vercel.app/). The app was deployed and is hosted by [vercel](https://vercel.com).
 
@@ -28,6 +21,13 @@ The following pages are available, with described GUI options:
 [![html](https://img.shields.io/badge/-HTML-E34F26?logo=html5&logoColor=000)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![vscode](https://img.shields.io/badge/-Visual%20Studio%20Code-007ACC?logo=visualstudiocode&logoColor=000)](https://code.visualstudio.com/)
 [![windows](https://img.shields.io/badge/-Windows-0078D6?logo=windows&logoColor=000)](https://www.microsoft.com/sv-se/windows)
+
+## Project Management
+The first draft and final structure of the app components were made with [figma](https://www.figma.com/file/3z0n5zfEAe2u9Mlw9W5BL0/Diagram---Untitled?node-id=0%3A1&t=R0evprNBn3FGprio-1), and is shown below.
+
+<b href="https://github.com/BrorNydal/LostInTranslation">
+  <img src="https://github.com/BrorNydal/LostInTranslation/blob/main/lost-in-translation/assets/Figma.png">
+</b>
 
 ## Code: Link and description
 
