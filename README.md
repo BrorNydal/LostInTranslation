@@ -12,7 +12,7 @@ You can download the code with ```bash== git clone (this url) ```. If you want t
 ## Functionality
 The following pages are available, with described GUI options:
 1. Login: Login with your name. 
-2. Translate: Translate words or sentences into sign language. The Americal Sign Language (ASL) is used, which means the app excludes any letters *not* included in the American alphabet. You can also toggle to profile history, or log out. 
+2. Translate: Translate words or sentences into sign language. The Americal Sign Language (ASL) is used, which means the app excludes any letters **not** included in the American alphabet. You can also toggle to profile history, or log out. 
 3. Profile History: See the last 10 translations in your profile, clean history and/or logout. 
 
 ## Dependencies
