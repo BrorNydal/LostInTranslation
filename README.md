@@ -3,6 +3,7 @@
 
 ## Abstract
 > Make a React application for translating text to sign language, with login-page, translate-page and a page for profile-history.
+
 > Part of the Noroff fullstack .NET accelerate module.
 
 ## Download and run
