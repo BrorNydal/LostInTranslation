@@ -27,7 +27,7 @@ The following pages are available, with described GUI options:
 (Want to use badges see e.g. [https://github.com/Ileriayo/markdown-badges](https://github.com/Ileriayo/markdown-badges) or [https://home.aveek.io/GitHub-Profile-Badges/](https://home.aveek.io/GitHub-Profile-Badges/)).
 
 ## Project Management
-The first draft and final structure of the app components were made with [figma](https://www.figma.com/file/3z0n5zfEAe2u9Mlw9W5BL0/Diagram---Untitled?node-id=0%3A1&t=R0evprNBn3FGprio-1), and is shown below.
+The first draft and final structure of the app components were made with [figma](https://www.figma.com/file/3z0n5zfEAe2u9Mlw9W5BL0/Diagram---Untitled?node-id=0%3A1&t=R0evprNBn3FGprio-1), and are shown below.
 
 <b href="https://github.com/BrorNydal/LostInTranslation">
   <img width = "800" height = "600" src="https://github.com/BrorNydal/LostInTranslation/blob/main/lost-in-translation/assets/Figma.png">
