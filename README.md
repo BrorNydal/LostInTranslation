@@ -23,7 +23,7 @@ The following pages are available, with described GUI options:
 [![html](https://img.shields.io/badge/-HTML-E34F26?logo=html5&logoColor=000)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![vscode](https://img.shields.io/badge/-Visual%20Studio%20Code-007ACC?logo=visualstudiocode&logoColor=000)](https://code.visualstudio.com/)
 [![windows](https://img.shields.io/badge/-Windows-0078D6?logo=windows&logoColor=000)](https://www.microsoft.com/sv-se/windows)
-(Want to use badges see: [markdown-badges](https://github.com/Ileriayo/markdown-badges)) 
+(Want to use badges see e.g. [https://github.com/Ileriayo/markdown-badges](https://github.com/Ileriayo/markdown-badges) or [https://home.aveek.io/GitHub-Profile-Badges/](https://home.aveek.io/GitHub-Profile-Badges/)).
 
 ## Project Management
 The first draft and final structure of the app components were made with [figma](https://www.figma.com/file/3z0n5zfEAe2u9Mlw9W5BL0/Diagram---Untitled?node-id=0%3A1&t=R0evprNBn3FGprio-1), and is shown below.
